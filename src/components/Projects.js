@@ -1,7 +1,7 @@
 export default function Projects(){
     return(
         <div>
-            This is the Projects =)
+            <img src="https://media.tenor.com/jaeWxWvGNe0AAAAC/monkey-cymbals.gif" alt="gif"/>
         </div>
     )
 }
