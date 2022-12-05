@@ -13,8 +13,8 @@ export default function TextToSpeech(){
                 </span>
             </p>
             
-            <video className='h-4/6' controls>
-                <source src={vid} type="video/mp4"/>
+            <video className='h-4/6' controls autoplay loop playsinline>
+                <source src="https://photos.google.com/photo/AF1QipMohXvtt-uNGMIv7zplK4EN7ql6NKKvTID_WHv4" type="video/mp4"/>
             </video>
         </div>
         </>

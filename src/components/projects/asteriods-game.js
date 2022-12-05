@@ -12,7 +12,7 @@ export default function AsteriodsGame(){
                 </span>
             </p>
             
-            <video className='h-4/6' controls>
+            <video className='h-4/6' controls autoplay loop playsinline>
                 <source src={vid} type="video/mp4"/>
             </video>
         </div>
