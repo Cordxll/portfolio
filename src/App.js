@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar"
 import Footer from "./components/Footer";
 import Blog from "./components/Blog"
 import BlogPost from "./components/BlogPost";
+import Contact from "./components/Contact";
+import ProjectsPage from "./components/ProjectsPage";
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home/>}/>
               <Route path="/projects" element={<Projects/>}/>
+              <Route path="/projects/:title" element={<ProjectsPage/>}/>
               <Route path="/blog" element={<Blog/>}/>
               <Route path="/blog/:title" element={<BlogPost/>}/>
+              <Route path="/contact" element={<Contact/>}/>
             </Routes>
             <Footer/>
           </Router>
