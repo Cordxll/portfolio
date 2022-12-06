@@ -1,8 +1,12 @@
 import vid from '../../assets/asteriods.mp4'
+import GoBack from './buttons/GoBack'
+import {Toggle} from './Toggle'
+
 export default function AsteriodsGame(){
     return(
         <>
         <div className='sm:px-32 md:px-40 lg:px-52'>
+            <GoBack/>
             <h1 className='font-bold text-4xl pt-4 pb-2'>Asteriods Game</h1>
             <p className='py-2'>It's bassically the atari version of asteriods built with html css and javascript.
                 The noticable feature that I implemented was the ability for the asteriods to get smarter
@@ -12,9 +16,11 @@ export default function AsteriodsGame(){
                 </span>
             </p>
             
-            <video className='h-4/6' controls autoplay loop playsinline>
+            <video  height="270" controls autoplay loop >
                 <source src={vid} type="video/mp4"/>
             </video>
+            {Toggle("/projects/this-portfolio","/projects/market-predictor", "This Portfolio","Market Forecasting")}
+            
         </div>
         </>
     )

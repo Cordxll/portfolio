@@ -8,6 +8,7 @@ import BlogPost from "./components/BlogPost";
 import Contact from "./components/Contact";
 import ProjectsPage from "./components/ProjectsPage";
 
+
 function App() {
   return (
     <div>

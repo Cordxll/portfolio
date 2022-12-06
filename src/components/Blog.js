@@ -30,15 +30,15 @@ let blogPosts = [
 export default function Blog(){
     return(
         <div>
-            <div class="px-10 inline-flex ">
-                <ol class="relative border-l border-gray-700 ">
+            <div className="px-10 inline-flex ">
+                <ol className="relative border-l border-gray-700 ">
                     {blogPosts.map((post) => (
-                        <li class="mb-6 ml-4">
-                            <div class="absolute w-3 h-3 bg-gray-00 rounded-full mt-1.5 -left-1.5 border-gray-900 bg-gray-700"></div>
-                            <time class="mb-1 text-sm font-normal leading-none text-sky-700 italic ">{post.date}</time>
-                            <h3 class="text-lg font-semibold font-mono">{post.title}</h3>
-                            <p class="mb-1 text-base font-normal font-mono" style={{inlineSize: '600px'}}>{post.description}</p>
-                            <Link to={post.link} class="font-mono inline-flex items-center py-2 text-sm font-medium hover:text-blue-600">Read more <svg class="ml-2 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></Link>
+                        <li key={post.title}className="mb-6 ml-4">
+                            <div className="absolute w-3 h-3 bg-gray-00 rounded-full mt-1.5 -left-1.5 border-gray-900 bg-gray-700"></div>
+                            <time className="mb-1 text-sm font-normal leading-none text-sky-700 italic ">{post.date}</time>
+                            <h3 className="text-lg font-semibold font-mono">{post.title}</h3>
+                            <p className="mb-1 text-base font-normal font-mono" style={{inlineSize: '600px'}}>{post.description}</p>
+                            <Link to={post.link} className="font-mono inline-flex items-center py-2 text-sm font-medium hover:text-blue-600">Read more <svg className="ml-2 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></Link>
                         </li>
                     ))}                
                 </ol>

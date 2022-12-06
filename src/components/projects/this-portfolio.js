@@ -1,9 +1,12 @@
 import pic from "../../assets/portfolio-code.png"
+import GoBack from './buttons/GoBack'
+import { Toggle } from "./Toggle"
 
 export default function ThisPortfolio(){
     return(
         <>
         <div className='sm:px-32 md:px-40 lg:px-52'>
+            <GoBack/>
             <h1 className='font-bold text-4xl pt-4 pb-2'>This Portfolio</h1>
             <p className='py-2'>Source code for this website. It was built with react, go check the
                 <span>
@@ -12,6 +15,7 @@ export default function ThisPortfolio(){
             </p>
             
            <img src={pic} alt="whats good?"/>
+           {Toggle("/projects/community-ally","/projects/asteriods-game","Community Ally", "Asteriod Game")}
         </div>
         </>
     )

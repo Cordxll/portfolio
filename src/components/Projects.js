@@ -20,11 +20,30 @@ export default function Projects(){
             ]
         },
         {
-            language:"python",
-            name:"ML Potato Salad Recipes",
-            descrip:"Using ML to get get recipes",
-            stack:"TensorFlow, Pandas, NLTK...",
-            link:"ml-potato-salad-recipes",
+            language:"csharp",
+            name:"CommunityAlly",
+            descrip:"Jamacia based community advertisment website",
+            stack:".NET, React, Other...",
+            link:"community-ally",
+            collaborators: [
+                {
+                    url:"https://github.com/Cordxll",
+                    name:"Cordell Browne",
+                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
+                },
+                {
+                    url:"https://www.communityallyonline.com/About",
+                    name:"Dain Taft",
+                    img:"http://static1.squarespace.com/static/545172c0e4b0a0a12cc1f0e8/56ab0b514bf11837b0fc79ce/56cd7396d51cd4fb9a8e8d29/1486186549139/?format=1500w"
+                }
+            ]
+        },
+        {
+            language:"react",
+            name:"This Portfolio",
+            descrip:"Source code for portfolio",
+            stack:"React & React Modules",
+            link:"this-portfolio",
             collaborators: [
                 {
                     url:"https://github.com/Cordxll",
@@ -39,20 +58,6 @@ export default function Projects(){
             descrip:"Atari style asteriod game",
             stack:"HTML, CSS, JS...",
             link:"asteriods-game",
-            collaborators: [
-                {
-                    url:"https://github.com/Cordxll",
-                    name:"Cordell Browne",
-                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
-                }
-            ]
-        },
-        {
-            language:"react",
-            name:"This Portfolio",
-            descrip:"Source code for portfolio",
-            stack:"React & React Modules",
-            link:"this-portfolio",
             collaborators: [
                 {
                     url:"https://github.com/Cordxll",
@@ -98,26 +103,8 @@ export default function Projects(){
                     img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
                 }
             ]
-        },
-        {
-            language:"csharp",
-            name:"CommunityAlly",
-            descrip:"Jamacia based community advertisment website",
-            stack:".NET, React, Other...",
-            link:"community-ally",
-            collaborators: [
-                {
-                    url:"https://github.com/Cordxll",
-                    name:"Cordell Browne",
-                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
-                },
-                {
-                    url:"https://www.communityallyonline.com/About",
-                    name:"Dain Taft",
-                    img:"http://static1.squarespace.com/static/545172c0e4b0a0a12cc1f0e8/56ab0b514bf11837b0fc79ce/56cd7396d51cd4fb9a8e8d29/1486186549139/?format=1500w"
-                }
-            ]
         }
+        
     ]
 
 
@@ -139,35 +126,35 @@ export default function Projects(){
             <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                 <FaJava className="h-8 w-8 fill-red-400"/>
             </div>
-            <div class="mt-8">
-                <p class="text-xl font-semibold my-2">Dev-10 Capstone Venue Finder</p>
-                <div class="flex space-x-2 text-gray-400 text-sm">
+            <div className="mt-8">
+                <p className="text-xl font-semibold my-2">Dev-10 Capstone Venue Finder</p>
+                <div className="flex space-x-2 text-gray-400 text-sm">
                         <GrStackOverflow className=""/>                   
                      <p>SpringBoot, React, MySQL...</p> 
                 </div>
-                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                <div className="flex space-x-2 text-gray-400 text-sm my-3">
                     <FaRegFile className=""/>
                     <p>Wedding venue lookup app</p> 
                 </div>
-                <div class="border-t-2 "></div>
+                <div className="border-t-2 "></div>
 
-                <div class="flex justify-between">
-                    <div class="my-2">
-                        <p class="font-semibold text-base mb-2">Collaborators</p>
-                        <div class="flex space-x-2">
+                <div className="flex justify-between">
+                    <div className="my-2">
+                        <p className="font-semibold text-base mb-2">Collaborators</p>
+                        <div className="flex space-x-2">
                             <img src="https://avatars.githubusercontent.com/u/111092439?v=4" 
-                            class="w-6 h-6 rounded-full"
+                            className="w-6 h-6 rounded-full"
                             alt="idk"/>
                             <img src="https://avatars.githubusercontent.com/u/66279751?v=4" 
-                            class="w-6 h-6 rounded-full"
+                            className="w-6 h-6 rounded-full"
                             alt="idk"/>
                             <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            class="w-6 h-6 rounded-full"
+                            className="w-6 h-6 rounded-full"
                             alt="idk"/>
                         </div>
                     </div>
-                     <div class="mt-8">
-                     <Link to="/projects/dev-10-capstone" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
+                     <div className="mt-8">
+                     <Link to="/projects/dev-10-capstone" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
                     </div>
                 </div>
             </div>
@@ -176,30 +163,30 @@ export default function Projects(){
             <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                 <FaPython className="h-8 w-8 fill-blue-400"/>
             </div>
-            <div class="mt-8">
-                <p class="text-xl font-semibold my-2">Market Predictor</p>
-                <div class="flex space-x-2 text-gray-400 text-sm">
+            <div className="mt-8">
+                <p className="text-xl font-semibold my-2">Market Predictor</p>
+                <div className="flex space-x-2 text-gray-400 text-sm">
                     <GrStackOverflow className=""/> 
                      <p>TensorFlow, Pandas, NLTK...</p> 
                 </div>
-                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                <div className="flex space-x-2 text-gray-400 text-sm my-3">
                 <FaRegFile className=""/>
                      <p>Atempt to gather useful market data</p> 
                 </div>
-                <div class="border-t-2 "></div>
+                <div className="border-t-2 "></div>
 
-                <div class="flex justify-between">
-                    <div class="my-2">
-                        <p class="font-semibold text-base mb-2">Collaborators</p>
-                        <div class="flex space-x-2">
+                <div className="flex justify-between">
+                    <div className="my-2">
+                        <p className="font-semibold text-base mb-2">Collaborators</p>
+                        <div className="flex space-x-2">
                             <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            class="w-6 h-6 rounded-full"
+                            className="w-6 h-6 rounded-full"
                             alt="idk"/>
                             
                         </div>
                     </div>
-                    <div class="mt-8">
-                     <Link to="/projects/market-predictor"class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
+                    <div className="mt-8">
+                     <Link to="/projects/market-predictor"className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
                     </div>
                 </div>
             </div>
@@ -208,30 +195,30 @@ export default function Projects(){
             <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                 <SiJavascript className="h-8 w-8 fill-yellow-400"/>
             </div>
-            <div class="mt-8">
-                <p class="text-xl font-semibold my-2">Asteriods Game</p>
-                <div class="flex space-x-2 text-gray-400 text-sm">
+            <div className="mt-8">
+                <p className="text-xl font-semibold my-2">Asteriods Game</p>
+                <div className="flex space-x-2 text-gray-400 text-sm">
                     <GrStackOverflow className=""/> 
                      <p>HTML, CSS, JS...</p> 
                 </div>
-                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                <div className="flex space-x-2 text-gray-400 text-sm my-3">
                     <FaRegFile className=""/>
                      <p>Atari style asteriod game</p> 
                 </div>
-                <div class="border-t-2 "></div>
+                <div className="border-t-2 "></div>
 
-                <div class="flex justify-between">
-                    <div class="my-2">
-                        <p class="font-semibold text-base mb-2">Collaborators</p>
-                        <div class="flex space-x-2">
+                <div className="flex justify-between">
+                    <div className="my-2">
+                        <p className="font-semibold text-base mb-2">Collaborators</p>
+                        <div className="flex space-x-2">
                             <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            class="w-6 h-6 rounded-full"
+                            className="w-6 h-6 rounded-full"
                             alt="idk"/>
                             
                         </div>
                     </div>
-                    <div class="mt-8">
-                     <Link to="/projects/asteriods-game" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
+                    <div className="mt-8">
+                     <Link to="/projects/asteriods-game" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
                     </div>
                 </div>
             </div>
@@ -244,38 +231,38 @@ export default function Projects(){
 
     function AllCards(){
         return(
-            <div className="grid grid-cols-3 pt-10 pl-32 ">
-                {allProjects.map((project, index) => (
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 pt-10 pl-0 md:pl-32 ">
+                {allProjects.map((project) => (
                     <>
-                        <div className="relative bg-white mt-12 py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
+                        <div key={project.name} className="relative bg-white mt-12 py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
                             <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
                                 {getIcon(project.language)}
                             </div>
-                            <div class="mt-8">
-                                <p class="text-xl font-semibold my-2">{project.name}</p>
-                                <div class="flex space-x-2 text-gray-400 text-sm">
+                            <div className="mt-8">
+                                <p className="text-xl font-semibold my-2">{project.name}</p>
+                                <div className="flex space-x-2 text-gray-400 text-sm">
                                     <GrStackOverflow className=""/> 
                                     <p>{project.stack}</p> 
                                 </div>
-                                <div class="flex space-x-2 text-gray-400 text-sm my-3">
+                                <div className="flex space-x-2 text-gray-400 text-sm my-3">
                                     <FaRegFile className=""/>
                                     <p>{project.descrip}</p> 
                                 </div>
-                                <div class="border-t-2 "></div>
+                                <div className="border-t-2 "></div>
 
-                                <div class="flex justify-between">
-                                    <div class="my-2">
-                                        <p class="font-semibold text-base mb-2">Collaborator(s)</p>
-                                        <div class="flex space-x-2">
+                                <div className="flex justify-between">
+                                    <div className="my-2">
+                                        <p className="font-semibold text-base mb-2">Collaborator(s)</p>
+                                        <div className="flex space-x-2">
                                             {project.collaborators.map((person) => (
-                                                <a href={person.url} ><img src={person.img}
-                                                class="w-6 h-6 rounded-full"
+                                                <a key={person.url} href={person.url} ><img src={person.img}
+                                                className="w-6 h-6 rounded-full"
                                                 alt="idk"/></a>
                                             ))} 
                                         </div>
                                     </div>
-                                    <div class="mt-8">
-                                    <Link to={project.link} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
+                                    <div className="mt-8">
+                                    <Link to={project.link} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
                                     </div>
                                 </div>
                             </div>
