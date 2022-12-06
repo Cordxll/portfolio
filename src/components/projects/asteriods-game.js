@@ -1,4 +1,3 @@
-import vid from '../../assets/asteriods.mp4'
 import GoBack from './buttons/GoBack'
 import {Toggle} from './Toggle'
 
@@ -17,7 +16,7 @@ export default function AsteriodsGame(){
             </p>
             
             <video  height="270" controls autoplay loop >
-                <source src={vid} type="video/mp4"/>
+                <source src="https://cordell-portfolio.s3.amazonaws.com/assets/asteriods.mp4" type="video/mp4"/>
             </video>
             {Toggle("/projects/this-portfolio","/projects/market-predictor", "This Portfolio","Market Forecasting")}
             

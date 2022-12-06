@@ -1,6 +1,4 @@
 import { Link} from "react-router-dom";
-import vid from "../../assets/medium.mp4"
-import vid1 from "../../assets/v1-t2s.mp4"
 import GoBack from './buttons/GoBack'
 import { Toggle } from "./Toggle";
 
@@ -20,11 +18,11 @@ export default function TextToSpeech(){
             </p>
             
             <video height="270" onloadstart="this.volume=0.5" controls loop playsinline>
-                <source src={vid1} type="video/mp4"/>
+                <source src="https://cordell-portfolio.s3.amazonaws.com/assets/v1-t2s.mp4" type="video/mp4"/>
             </video>
             <p className="py-3">The video below shows the inspiration and where I aim to take the software visually.</p>
             <video height="270" controls loop playsinline>
-                <source src={vid} type="video/mp4"/>
+                <source src="https://cordell-portfolio.s3.amazonaws.com/assets/medium.mp4" type="video/mp4"/>
             </video>
             {Toggle("/projects/dev-10-capstone","/projects/community-ally", "Dev-10 Capstone","Community Ally")}
         </div>
