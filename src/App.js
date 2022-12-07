@@ -7,6 +7,7 @@ import Blog from "./components/Blog"
 import BlogPost from "./components/BlogPost";
 import Contact from "./components/Contact";
 import ProjectsPage from "./components/ProjectsPage";
+import TestFile from "./components/TestFile";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path="/blog" element={<Blog/>}/>
               <Route path="/blog/:title" element={<BlogPost/>}/>
               <Route path="/contact" element={<Contact/>}/>
+              <Route path="/test" element={<TestFile/>}/>
             </Routes>
             <Footer/>
           </Router>

@@ -1,12 +1,33 @@
+import { TextToSpeech } from './TextToSpeech'
+import headshot from '../../assets/IMG_1783.jpeg'
+import {FaShare} from 'react-icons/fa'
+
 export default function Two(){
     var d2 = new Date("2022/11/15")
     var d1= new Date()
 
+    function Header(){
+        return(
+            <>
+                <div className="flex text-black">
+                    <img src={headshot} alt="" className="flex-shrink-0 w-12 h-12 border rounded-full" />
+                    <div className="flex flex-col p-2">
+                        <h4 className="text-sm font-semibold text-center md:text-left">Cordell Browne</h4>
+                        <div className="text-xs">Nov 15, 2022 · 3 min read · {TextToSpeech("hello, my name is cordell browne")}</div>
+                    </div>
+                    <div className='ml-auto mt-2'>
+                        <button className='p-2  border border-gray-300 rounded-full hover:bg-gray-100'><FaShare/></button>
+                    </div>
+                </div>
+            </>
+        )
+    }
+
     return(
-        <>
-            <div class="px-40 pt-6">
-                    <h1 class="pt-4 text-4xl font-serif"><div>BeautifulSoup:</div>How to web scrape with python.</h1>
-                    <p class="pt-2 text-sm">Nov 15, 2022</p>
+        <div className="flex justify-center items-center font-serif">
+            <div class="max-w-3xl pt-6">
+                    {Header()}
+                    <h1 class="pt-4 text-4xl font-serif">BeautifulSoup, How to web scrape with python.</h1>
                     <p class="pb-4 text-sm">{Math.floor(Math.abs(d1-d2)/86400000)} days ago</p>
                     <p class="text-sm italic text-gray-500 px-40 py-4">You can't just sit there and wait for people to give you that golden dream. You've got to get out there and make it happen for yourself. - Diana Ross</p>
                     <h1 class="py-4 text-2xl font-extrabold">What is Beautiful Soup?</h1>
@@ -52,6 +73,6 @@ export default function Two(){
                     <div class=""></div>
                     <iframe class="py-4" width="620" height="400"src="https://www.youtube.com/embed/gRLHr664tXA" title="Potato Party 3"></iframe>
             </div>
-        </>
+        </div>
     )
 }

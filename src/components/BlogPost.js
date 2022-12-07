@@ -16,7 +16,7 @@ export default function BlogPost(){
         case "how-to-web-scrape-with-python":
             return <Two/>
     
-        case "what-are-my-goals-for-this-blog":
+        case "text-to-speech-v1":
             return <One/>
 
         default:

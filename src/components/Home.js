@@ -14,7 +14,7 @@ import headshot from '../assets/IMG_1783.jpeg'
 //   } from "@material-tailwind/react";
 
 
-import './Home.css'
+// import './Home.css'
 import { Link } from 'react-router-dom'
 
 export default function Home(){
@@ -23,8 +23,14 @@ export default function Home(){
         <>
         <div className="container">
             <div className='h-16'></div>
-            <div className="section-1 py-20">
-                <div className="column float-right ">
+            <div className="flex justify-center space-x-32 py-20">
+
+                <div className="py-10 font-mono">
+                    <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900" style={{inlineSize:"400px"}}>Hello, my name is Cordell Browne.</h1>
+                    <p className="break-words" style={{inlineSize:"500px"}}> I am a biomedical science graduate turned software engineer. My favorite languages are Java and Python and I am highly interested in working with big data. In my spare time, I enjoy triathlon training and cooking.</p>
+                </div>
+
+                <div className="column ">
                     <div className="p-4 shadow-xl rounded-full">
                         <img className="rounded-full shadow-xl" src={headshot} width="210" height="300" alt="Handsome Young Man"/>
                     </div>
@@ -35,10 +41,7 @@ export default function Home(){
                         <a href='https://www.kaggle.com/cordellbrowne'target="_blank" rel="noreferrer"  className="hover:text-sky-300"><FaKaggle className="float-left"size={22}/></a>
                     </div>
                 </div>
-                <div className="column intro-statement float-left py-10 font-mono">
-                        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900" >Hello, my name is Cordell Browne.</h1>
-                        <p className=""> I am a biomedical science graduate turned software engineer. My favorite languages are Java and Python and I am highly interested in working with big data. In my spare time, I enjoy triathlon training and cooking.</p>
-                </div>
+                
             </div>
         </div>
         </>

@@ -8,7 +8,7 @@ export function TextToSpeech(text){
     console.log(window.location.pathname)
     let synth = window.speechSynthesis;
     synth.cancel();
-    
+    let [started, setStarted] = useState(false)
     const [rate, setRate] = useState(0.9);
     let flag = false;
     let utterance = new SpeechSynthesisUtterance(text);
@@ -32,17 +32,21 @@ export function TextToSpeech(text){
 
         }
       }
-
-    function Play(){
-          if(!flag){
+    
+    function Play(){ 
+        if(!flag){
             flag = true;
             utterance.onend = function(){
                 flag = false;
             };
             synth.speak(utterance)
+            
           }
           if(synth.paused){
             synth.resume();
+          }
+          if(!started){
+            setStarted(true) 
           }
     }
 
@@ -66,7 +70,10 @@ export function TextToSpeech(text){
                     <FaPlayCircle className='inline-block'/>
                     <p className='inline-block pl-2'>Listen</p>
                 </button>
-                <div className='absolute bg-gray-100 p-6 rounded-2xl bottom-10 right-20 grid grid-cols-4 opacity-70'>
+                {
+                started
+                && 
+                <div className='fixed bg-gray-100 p-6 rounded-2xl bottom-10 right-20 grid grid-cols-4 opacity-70'>
                     <button onClick={Play} className='px-2'><FaPlayCircle size={28}/></button>
                     <button onClick={Pause} className='px-2'><FaPauseCircle size={28}/></button>
                     <button onClick={End} className='px-2'><FaUndoAlt size={28}/></button>
@@ -79,6 +86,7 @@ export function TextToSpeech(text){
                         </select>
                     </form>
                 </div>
+                }
             </>
     )
 }
