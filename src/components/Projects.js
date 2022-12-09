@@ -103,8 +103,61 @@ export default function Projects(){
                     img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
                 }
             ]
+        } 
+    ]
+    let featured = [
+        {
+            language:"java",
+            name:"Dev10 Capstone Venue Finder",
+            descrip:"Wedding venue lookup app",
+            stack:"SpringBoot, React, MySQL...",
+            link:"dev-10-capstone",
+            collaborators: [
+                {
+                    url:"https://github.com/Samuel-en",
+                    name:"Samuel Endrias",
+                    img:"https://avatars.githubusercontent.com/u/66279751?v=4" 
+                },
+                {
+                    url:"https://github.com/YuliiaButenko",
+                    name:"Yuliia Butenko",
+                    img:"https://avatars.githubusercontent.com/u/111092439?v=4"
+                },
+                {
+                    url:"https://github.com/Cordxll",
+                    name:"Cordell Browne",
+                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
+                }
+            ]
+        },
+        {
+            language:"react",
+            name:"Text To Speech In React App",
+            descrip:"Building a text to speech func for blogs",
+            stack:"JSX, NPM libraries...",
+            link:"text-to-speech",
+            collaborators:[
+                {
+                    url:"https://github.com/Cordxll",
+                    name:"Cordell Browne",
+                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
+                }
+            ]
+        },
+        {
+            language:"js",
+            name:"Asteriods Game",
+            descrip:"Atari style asteriod game",
+            stack:"HTML, CSS, JS...",
+            link:"asteriods-game",
+            collaborators: [
+                {
+                    url:"https://github.com/Cordxll",
+                    name:"Cordell Browne",
+                    img:"https://avatars.githubusercontent.com/u/88411627?v=4" 
+                }
+            ]
         }
-        
     ]
 
 
@@ -121,117 +174,60 @@ export default function Projects(){
     
     function Featured(){
         return(
-            <div className="grid grid-cols-3 pl-32 pt-20 pb-20">
-            <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
-            <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
-                <FaJava className="h-8 w-8 fill-red-400"/>
-            </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold my-2">Dev-10 Capstone Venue Finder</p>
-                <div className="flex space-x-2 text-gray-400 text-sm">
-                        <GrStackOverflow className=""/>                   
-                     <p>SpringBoot, React, MySQL...</p> 
-                </div>
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                    <FaRegFile className=""/>
-                    <p>Wedding venue lookup app</p> 
-                </div>
-                <div className="border-t-2 "></div>
+            <>
+            <div className="grid grid-cols-3 justify-items-center">
+                {featured.map((project) => (
+                    <>
+                        <div key={project.name} className="relative bg-white mt-12 py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
+                            <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
+                                {getIcon(project.language)}
+                            </div>
+                            <div className="mt-8">
+                                <p className="text-xl font-semibold my-2">{project.name}</p>
+                                <div className="flex space-x-2 text-gray-400 text-sm">
+                                    <GrStackOverflow className=""/> 
+                                    <p>{project.stack}</p> 
+                                </div>
+                                <div className="flex space-x-2 text-gray-400 text-sm my-3">
+                                    <FaRegFile className=""/>
+                                    <p>{project.descrip}</p> 
+                                </div>
+                                <div className="border-t-2 "></div>
 
-                <div className="flex justify-between">
-                    <div className="my-2">
-                        <p className="font-semibold text-base mb-2">Collaborators</p>
-                        <div className="flex space-x-2">
-                            <img src="https://avatars.githubusercontent.com/u/111092439?v=4" 
-                            className="w-6 h-6 rounded-full"
-                            alt="idk"/>
-                            <img src="https://avatars.githubusercontent.com/u/66279751?v=4" 
-                            className="w-6 h-6 rounded-full"
-                            alt="idk"/>
-                            <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            className="w-6 h-6 rounded-full"
-                            alt="idk"/>
+                                <div className="flex justify-between">
+                                    <div className="my-2">
+                                        <p className="font-semibold text-base mb-2">Collaborator(s)</p>
+                                        <div className="flex space-x-2">
+                                            {project.collaborators.map((person) => (
+                                                <a 
+                                                key={person.url} 
+                                                href={person.url}
+                                                target="_blank"
+                                                rel="noreferrer"><img src={person.img}
+                                                className="w-6 h-6 rounded-full"
+                                                alt="idk"
+                                                
+                                                /></a>
+                                            ))} 
+                                        </div>
+                                    </div>
+                                    <div className="mt-8">
+                                    <Link to={project.link} className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                     <div className="mt-8">
-                     <Link to="/projects/dev-10-capstone" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
-                    </div>
-                </div>
+                    </>
+                ))}
             </div>
-        </div>
-        <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
-            <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
-                <FaPython className="h-8 w-8 fill-blue-400"/>
-            </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold my-2">Market Predictor</p>
-                <div className="flex space-x-2 text-gray-400 text-sm">
-                    <GrStackOverflow className=""/> 
-                     <p>TensorFlow, Pandas, NLTK...</p> 
-                </div>
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                <FaRegFile className=""/>
-                     <p>Atempt to gather useful market data</p> 
-                </div>
-                <div className="border-t-2 "></div>
-
-                <div className="flex justify-between">
-                    <div className="my-2">
-                        <p className="font-semibold text-base mb-2">Collaborators</p>
-                        <div className="flex space-x-2">
-                            <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            className="w-6 h-6 rounded-full"
-                            alt="idk"/>
-                            
-                        </div>
-                    </div>
-                    <div className="mt-8">
-                     <Link to="/projects/market-predictor"className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="relative bg-white py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
-            <div className="flex items-center absolute rounded-full py-4 px-4 shadow-xl left-4 -top-6">
-                <SiJavascript className="h-8 w-8 fill-yellow-400"/>
-            </div>
-            <div className="mt-8">
-                <p className="text-xl font-semibold my-2">Asteriods Game</p>
-                <div className="flex space-x-2 text-gray-400 text-sm">
-                    <GrStackOverflow className=""/> 
-                     <p>HTML, CSS, JS...</p> 
-                </div>
-                <div className="flex space-x-2 text-gray-400 text-sm my-3">
-                    <FaRegFile className=""/>
-                     <p>Atari style asteriod game</p> 
-                </div>
-                <div className="border-t-2 "></div>
-
-                <div className="flex justify-between">
-                    <div className="my-2">
-                        <p className="font-semibold text-base mb-2">Collaborators</p>
-                        <div className="flex space-x-2">
-                            <img src="https://avatars.githubusercontent.com/u/88411627?v=4" 
-                            className="w-6 h-6 rounded-full"
-                            alt="idk"/>
-                            
-                        </div>
-                    </div>
-                    <div className="mt-8">
-                     <Link to="/projects/asteriods-game" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">See More</Link>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        </div>
+        )
+            </>
         )
     }
 
     function AllCards(){
         return(
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 pt-10 pl-0 md:pl-32 ">
+            <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 pt-10 justify-items-center">
                 {allProjects.map((project) => (
                     <>
                         <div key={project.name} className="relative bg-white mt-12 py-6 px-6 rounded-3xl w-96 my-4 shadow-xl">
@@ -255,9 +251,15 @@ export default function Projects(){
                                         <p className="font-semibold text-base mb-2">Collaborator(s)</p>
                                         <div className="flex space-x-2">
                                             {project.collaborators.map((person) => (
-                                                <a key={person.url} href={person.url} ><img src={person.img}
+                                                <a 
+                                                key={person.url}
+                                                href={person.url}
+                                                target="_blank"
+                                                rel="noreferrer">
+                                                    <img src={person.img}
                                                 className="w-6 h-6 rounded-full"
-                                                alt="idk"/></a>
+                                                alt="idk"
+                                                /></a>
                                             ))} 
                                         </div>
                                     </div>
@@ -300,8 +302,8 @@ export default function Projects(){
     
     return(
         <div>
-            <div>{Header("Featured")}</div>
-            <div>{Featured()}</div>
+            <div className="hidden sm:block">{Header("Featured")}</div>
+            <div className="hidden sm:block">{Featured()}</div>
             <div>{Header("View All")}</div>
             <div>{AllCards()}</div>
             

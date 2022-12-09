@@ -44,7 +44,7 @@ export default function Contact(){
               className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5" 
               placeholder="name@whatever.com" required/>
           </div>
-          {success && (<img className="shadow-xl p-1 absolute inset-x-0 bottom-0" src={gif} alt="hi"/>)}
+          
           <div>
               <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject or Name</label>
               <input 
@@ -60,6 +60,7 @@ export default function Contact(){
           </div>
           {success ? "" : <button type="submit" className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Send message</button>}    
       </form>
+      {success && (<img className="shadow-xl p-1 fixed top-1/2 bottom-0" src={gif} alt="hi"/>)}
   </div>
 </section>
     </>

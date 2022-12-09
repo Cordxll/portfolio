@@ -25,7 +25,7 @@ function App() {
               <Route path="/contact" element={<Contact/>}/>
               <Route path="/test" element={<TestFile/>}/>
             </Routes>
-            <Footer/>
+            <Footer className=""/>
           </Router>
         </div>
   );
