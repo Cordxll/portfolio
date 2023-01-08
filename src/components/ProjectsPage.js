@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect,useState } from "react";
 
-import GoBack from "./projects/buttons/GoBack";
+import GoBack from "./GoBack";
 
 
 export default function ProjectsPage(){

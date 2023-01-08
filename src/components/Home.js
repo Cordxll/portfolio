@@ -1,20 +1,5 @@
 import {FaEnvelope, FaKaggle} from 'react-icons/fa'
 import headshot from '../assets/IMG_1783.jpeg'
-// import engagmentPic from '../assets/ring-finger.jpg'
-// import kagglePic from "../assets/kaggle_landing_header.png"
-// import atariPic from "../assets/atari-graphic.jpg"
-// import stockPic from "../assets/stock-graphic.jpg"
-
-// import {
-//     Card,
-//     CardHeader,
-//     CardBody,
-//     CardFooter,
-//     Typography,
-//   } from "@material-tailwind/react";
-
-
-// import './Home.css'
 import { Link } from 'react-router-dom'
 
 export default function Home(){
@@ -46,113 +31,7 @@ export default function Home(){
         </>
         )
     }
-    // function Projects(){
-    //     return(
-    //         <>
-    //             <div className="section-2" >
-    //                 <h1 className="mb-4 text-lg font-semibold tracking-tight leading-none text-gray-700 pt-20 pl-20">My Projects</h1>
-    //                 <div className='grid grid-cols-3 px-16 py-20'>
-    //                     <div className="card-one">
-    //                         <Card className="w-96 rounded-xl shadow">
-    //                             <CardHeader className="relative h-56 w-96 pt-6 flex justify-center rounded-none shadow-none">
-                                
-    //                             <img
-    //                                 src= {engagmentPic}
-    //                                 alt="img-blur-shadow"
-    //                                 className="h-5/6 w-4/6 rounded-lg shadow-lg"
-    //                             />
-    //                             </CardHeader>
-    //                             <CardBody className="text-center px-4">
-    //                             <Typography variant="h5" className="mb-2">
-    //                                 Dev-10 Capstone
-    //                             </Typography>
-    //                             <Typography>                                   
-    //                                 Walk core technologies consitsted of <span className='font-bold'>Java, React,</span> and
-    //                                 <span className='font-bold'> SQL</span> and near to "Naviglio" where you can enjoy the
-    //                                 main night life in Barcelona something here over ther anywhere.
-    //                             </Typography>
-    //                             </CardBody>
-    //                             <CardFooter divider className="flex items-center justify-between py-3 px-4">
-    //                             <Typography className="text-xs"variant="small"><span className='font-bold'>Co-Authors:</span> Samuel E. & Yuilia B.</Typography>
-    //                             </CardFooter>
-    //                         </Card>
-    //                     </div>
-    //                     <div className="card-two">
-    //                         <Card className="w-96 rounded-xl shadow">
-    //                             <CardHeader className="relative h-56 w-96 pt-6 flex justify-center rounded-none shadow-none">
-                                
-    //                             <img
-    //                                 src= {atariPic}
-    //                                 alt="img-blur-shadow"
-    //                                 className="h-5/6 w-4/6 rounded-lg shadow-lg"
-    //                             />
-    //                             </CardHeader>
-    //                             <CardBody className="text-center px-4">
-    //                             <Typography variant="h5" className="mb-2">
-    //                                 Asteriods Game
-    //                             </Typography>
-    //                             <Typography>
-    //                                 Developed with <span className='font-bold'>Html, CSS,</span> and <span className='font-bold'>JavaScript</span>. and bus stop just 2 min by
-    //                                 walk and near to "Naviglio" where you can enjoy the main night life in
-    //                                 Barcelona.
-    //                             </Typography>
-    //                             </CardBody>
-    //                             <CardFooter divider className="flex items-center justify-between py-3 px-4">
-    //                             <Typography className="text-xs"variant="small"><span className='font-bold'>Inspired By:</span> Some guy on youtube</Typography>
-    //                             </CardFooter>
-    //                         </Card>
-    //                     </div>
-    //                     <div className="card-three">
-    //                         <Card className="w-96 rounded-xl shadow">
-    //                             <CardHeader  className="relative h-56 w-96 pt-6 flex justify-center rounded-none shadow-none">
-                                
-    //                             <img
-    //                                 src= {stockPic}
-    //                                 alt="img-blur-shadow"
-    //                                 className="h-5/6 w-4/6 rounded-lg shadow-lg"
-    //                             />
-    //                             </CardHeader>
-    //                             <CardBody className="text-center px-4">
-    //                             <Typography variant="h5" className="mb-2">
-    //                                 Stock Market Forecasting
-    //                             </Typography>
-    //                             <Typography>
-    //                                 A <span className='font-bold'>Python</span> is close to Barceloneta Beach and bus stop just 2 min by
-    //                                 walk and near to "Naviglio" where you can enjoy the main night life in
-    //                                 Barcelona.
-    //                             </Typography>
-    //                             </CardBody>
-    //                             <CardFooter divider className="flex items-center justify-between py-3 px-4">
-    //                             <Typography className="text-xs h-4"variant="small"></Typography>
-    //                             </CardFooter>
-    //                         </Card>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </>
-    //     )
-    // }
-    
-    // function Kaggle(){
-    //     return(
-    //         <>
-    //         <div className="section-3 pb-32">
-    //             <div className="kaggle-intro pt-32 pl-32 column float-left">
-    //                 <h1 className="kaggle-header pb-10 text-sky-300">Kaggle</h1>
-    //                 <p>Kaggle is an online community platform for data scientists and machine learning enthusiasts. Kaggle allows users to collaborate with other users, find and publish datasets, use GPU integrated notebooks, and compete with other data scientists to solve data science challenges. Check out my contributions!</p>
-    //                 <a href="https://www.kaggle.com/cordellbrowne" target="_blank" rel="noreferrer">
-    //                 <button className="mt-4 bg-transparent hover:bg-sky-300 text-sky-300 font-semibold hover:text-white py-2 px-4 border border-sky-300  hover:border-transparent rounded-full">
-    //                     View My Profile
-    //                 </button>
-    //                 </a>
-    //             </div>
-    //             <img className="kaggle-img pr-32 pt-32 h-96 column float-right " src={kagglePic} alt="idk"/>
-
-    //         </div>
-    //         </>
-    //     )
-    // }
-      
+     
     return(
         <div>
             <div>{AboutMe()}</div>
