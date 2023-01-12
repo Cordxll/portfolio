@@ -111,7 +111,7 @@ export default function Blog(){
         <div className="flex justify-center">
           <div className="max-w-3xl block sm:flex sm:justify-center p-0 sm:p-5 hover:bg-gray-100 rounded-xl">
             <Link to={feat.post_id}>
-              <img src={feat.preview_img} className="w-full sm:w-96 sm:h-64 object-cover"/>
+              <img src={feat.preview_img} className="w-full sm:w-96 sm:h-64 object-cover" alt="idc"/>
             </Link>
             <div className="p-4">
               <Link to={feat.post_id} className='font-bold text-2xl text-gray-700'>{feat.title}</Link>
