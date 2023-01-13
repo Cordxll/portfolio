@@ -1,7 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useEffect,useState } from "react";
+import {FaLongArrowAltLeft} from 'react-icons/fa'
+import { Link} from "react-router-dom";
 
-import GoBack from "./GoBack";
+
 
 
 export default function ProjectsPage(){
@@ -23,7 +25,7 @@ export default function ProjectsPage(){
 
         show();
         
-    },[])
+    },[]);
 
     function InnerHTML(body){
         switch(body.tag){
@@ -82,12 +84,23 @@ export default function ProjectsPage(){
                     </div>
                 )
         }
-    }
+    };
+
+    function GoBack(){
+        return (
+            <>
+            <Link to="/projects"className='grid grid-cols-2 w-12 text-blue-600'>
+                <FaLongArrowAltLeft className='mt-1'/>
+                <span className=''>Projects</span>
+            </Link>
+            </>
+        )
+    };
 
     return(
         <>
             <div className="sm:px-32 md:px-40 lg:px-52">
-                <GoBack/>
+                {GoBack()}
                     {(project.body)?.map((x) => (
                         <>
                             {InnerHTML(x)}

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import headshot from '../assets/IMG_1783.jpeg'
 import {FaShare} from 'react-icons/fa'
 import { useEffect, useState } from "react";
+import TextToSpeech from "./TextToSpeech";
 
 
 
@@ -10,14 +11,14 @@ import { useEffect, useState } from "react";
 export default function BlogPost(){
     
     const { title } = useParams();
-    
     const [post, setPost] = useState({
         post_id:"",
         date:"",
         description:"",
         title:"",
         preview_img:"",
-        body: []
+        body: [],
+        text:""
     });
 
     const url = `https://5p61nj9kc8.execute-api.us-east-1.amazonaws.com/blogs/getById?post_id=${title}`;
@@ -32,7 +33,7 @@ export default function BlogPost(){
         
         getPost();
 
-    },[]);
+    },[url]);
 
     function setHTML(body){
         switch(body.tag){
@@ -48,7 +49,7 @@ export default function BlogPost(){
                         <img src={headshot} alt="" className="flex-shrink-0 w-12 h-12 border rounded-full" />
                         <div className="flex flex-col p-2">
                             <h4 className="text-sm font-semibold text-center md:text-left">Cordell Browne</h4>
-                            <div className="text-xs">{post.date} · 3 min read · </div>
+                            <div className="text-xs">{post.date} · {estimatedReadTime()}  · <TextToSpeech text={post.text}/></div>
                         </div>
                         <div className='ml-auto mt-2'>
                             <button className='p-2  border border-gray-300 rounded-full hover:bg-gray-100'><FaShare/></button>
@@ -61,6 +62,7 @@ export default function BlogPost(){
                         <img 
                         src={body.value}
                         className="py-4 block w-full"
+                        alt="idk"
                         />
                     </div>
                 )
@@ -127,6 +129,21 @@ export default function BlogPost(){
                     </div>
                 )
         }
+    }
+
+    function estimatedReadTime(){
+        const wordCount = post.text.split(' ').length;
+        const num = Math.round(wordCount / 200); 
+
+        return(
+            <>
+            {num === 0 ?
+             <> &#60; 1 min read </>
+             : 
+             <> {num} min read </>
+            }
+            </>
+        )
     }
 
 

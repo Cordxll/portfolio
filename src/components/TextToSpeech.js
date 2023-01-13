@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {FaPlayCircle, FaUndoAlt, FaPauseCircle} from 'react-icons/fa'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 
-export function TextToSpeech(text){
-    const location = useLocation();
-    console.log(location.pathname)
-    console.log(window.location.pathname)
-    let synth = window.speechSynthesis;
-    synth.cancel();
-    let [started, setStarted] = useState(false)
+export default function TextToSpeech({text}){
+    const { title } = useParams();
+    const [playing, isPlaying] = useState(false);
     const [rate, setRate] = useState(0.9);
     let flag = false;
-    let utterance = new SpeechSynthesisUtterance(text);
+    var hasWindow = typeof window === 'object' && window !== null && window.self === window && window.navigator !== null;
+    var bIsiOS = hasWindow && /iPad|iPhone|iPod/.test(window.navigator.userAgent) && !window.MSStream;
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    const synth = window.speechSynthesis;
+    synth.cancel();
+    
     utterance.lang ="en"
     utterance.voice = synth.getVoices()[0];
     utterance.rate = rate;
@@ -34,6 +36,7 @@ export function TextToSpeech(text){
       }
     
     function Play(){ 
+        
         if(!flag){
             flag = true;
             utterance.onend = function(){
@@ -45,14 +48,15 @@ export function TextToSpeech(text){
           if(synth.paused){
             synth.resume();
           }
-          if(!started){
-            setStarted(true) 
+          if(!playing){
+            isPlaying(true) 
           }
     }
 
     function Pause(){
         if(synth.speaking && !synth.paused){
             synth.pause();
+            
         }
         
     }
@@ -63,15 +67,24 @@ export function TextToSpeech(text){
             synth.cancel();
         }
     }
-
+    
     return(
             <>
-                <button onClick={Play} className='text-green-500 pl-1'>
-                    <FaPlayCircle className='inline-block'/>
-                    <p className='inline-block pl-2'>Listen</p>
+                <button onClick={playing ? Pause : Play} className='text-green-500 pl-1'>
+                    {
+                    !playing ? 
+                    <>
+                        <FaPlayCircle className='inline-block'/>
+                        <p className='inline-block pl-2'>Listen</p>
+                    </> 
+                    : 
+                    <>
+                        <FaPauseCircle className='inline-block'/>
+                    </>
+                    }
                 </button>
                 {
-                started
+                playing
                 && 
                 <div className='fixed bg-gray-100 p-6 rounded-2xl bottom-10 right-20 grid grid-cols-4 opacity-70'>
                     <button onClick={Play} className='px-2'><FaPlayCircle size={28}/></button>
@@ -90,3 +103,4 @@ export function TextToSpeech(text){
             </>
     )
 }
+            
