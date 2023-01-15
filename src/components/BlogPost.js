@@ -3,7 +3,8 @@ import { useParams } from "react-router-dom"
 import headshot from '../assets/IMG_1783.jpeg'
 import {FaShare} from 'react-icons/fa'
 import { useEffect, useState } from "react";
-import TextToSpeech from "./TextToSpeech";
+
+import TTS from "./TTS";
 
 
 
@@ -47,10 +48,12 @@ export default function BlogPost(){
                 return(    
                     <div className="flex text-black">
                         <img src={headshot} alt="" className="flex-shrink-0 w-12 h-12 border rounded-full" />
-                        <div className="flex flex-col p-2">
-                            <h4 className="text-sm font-semibold text-center md:text-left">Cordell Browne</h4>
-                            <div className="text-xs">{post.date} · {estimatedReadTime()}  · <TextToSpeech text={post.text}/></div>
+                        
+                        <div className="p-2">
+                            <h4 className="text-sm font-semibold text-left">Cordell Browne</h4>
+                            <div className="text-xs">{post.date} · {estimatedReadTime()}  · <TTS text={post.text}/></div>
                         </div>
+
                         <div className='ml-auto mt-2'>
                             <button className='p-2  border border-gray-300 rounded-full hover:bg-gray-100'><FaShare/></button>
                         </div>

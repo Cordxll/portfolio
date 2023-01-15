@@ -9,7 +9,6 @@ import Contact from "./components/Contact";
 import ProjectsPage from "./components/ProjectsPage";
 import TestFile from "./components/TestFile";
 
-
 function App() {
   return (
     <div>

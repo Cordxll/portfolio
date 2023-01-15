@@ -9,7 +9,6 @@ export default function Home(){
 
     function Pics(){
         return(
-            
             <div className="hidden sm:block">
                     <div className='flex justify-center relative'>
                         <div className='absolute top-0 left-0 text-sm text-gray-300 font-thin font-cedarville -rotate-45 my-auto'>&#60;img/&#62;</div>
@@ -65,10 +64,10 @@ export default function Home(){
             <div className='absolute top-0 left-4 text-sm text-gray-300 font-cedarville font-alex-brush'>&#60;html/&#62;</div>
             <div className='h-4 sm:h-16'/>
             <div className='p-2 flex justify-center transition-opacity duration-1000 ease-in animate-fade'>
-                <div className='relative '>
+                <div className='relative'>
                     <div>{AboutMe()}</div>
                     <div className='absolute top-0 left-0 text-sm text-gray-300 font-thin font-cedarville '>&#60;body&#62;</div>
-                    <div className='absolute bottom-0 left-0 text-sm text-gray-300 font-cedarville'>&#60;body&#62;</div>
+                    <div className='absolute bottom-0 left-0 text-sm text-gray-300 font-cedarville'>&#60;/body&#62;</div>
                 </div>
                 {Pics()}
             </div>

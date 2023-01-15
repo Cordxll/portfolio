@@ -7,8 +7,7 @@ export default function TextToSpeech({text}){
     const [playing, isPlaying] = useState(false);
     const [rate, setRate] = useState(0.9);
     let flag = false;
-    var hasWindow = typeof window === 'object' && window !== null && window.self === window && window.navigator !== null;
-    var bIsiOS = hasWindow && /iPad|iPhone|iPod/.test(window.navigator.userAgent) && !window.MSStream;
+    
     
     const utterance = new SpeechSynthesisUtterance(text);
     const synth = window.speechSynthesis;
@@ -58,6 +57,7 @@ export default function TextToSpeech({text}){
             synth.pause();
             
         }
+        
         
     }
 
