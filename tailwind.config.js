@@ -31,6 +31,11 @@ module.exports = {
       },
       fontFamily: {
         'cedarville': ['Cedarville Cursive', 'cursive'],
+        'alfa':['Alfa Slab One', 'cursive'],
+        'carter':['Carter One', 'cursive'],
+        'bondoni':['Bodoni Moda', 'serif'],
+        'rockSalt' :['Rock Salt', 'cursive'],
+        'nabla' :['Nabla', 'cursive']
       }
     },
   },

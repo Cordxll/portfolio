@@ -5,10 +5,10 @@ import { useState } from "react";
 export default function NavBar(){
     const [isHidden, setIsHidden] = useState(true);
     return(
-        <div className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
+        <div className="bg-white px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200 bg-opacity-90 shadow">
             <div className="container flex flex-wrap justify-between items-center mx-auto">
                 <Link to="/" className="flex items-center">
-                    <span className="hidden sm:flex self-center text-xl font-semibold whitespace-nowrap order-1">Cordell's Portfolio</span>
+                    <span className="hidden sm:flex self-center text-3xl font-semibold whitespace-nowrap order-1 font-nabla">Cordell</span>
                 </Link>
                 <div className="justify-between items-center w-auto flex order-2 mr-24" id="navbar-sticky">
                     <ul className="flex p-4   rounded-lg  flex-row space-x-8 mt-0 text-sm font-medium border-0">

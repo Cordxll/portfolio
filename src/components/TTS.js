@@ -11,7 +11,7 @@ export default function TTS({text}){
     const duration = Math.round(wordCount / SYNTH_WORDS_PER_SEC);
     const minutes = ~~((duration % 3600) / 60);
     const seconds = ~~duration % 60; 
-    const displayDuration = "0" + minutes + " : "  + ( seconds < 10 ? "0" + seconds : + seconds );
+    const displayDuration = "0" + minutes + ":"  + ( seconds < 10 ? "0" + seconds : + seconds );
     
     const [timer, setTimer] = useState(duration);
     const [clock, setClock] = useState(displayDuration);
@@ -21,9 +21,11 @@ export default function TTS({text}){
     let utterance = new SpeechSynthesisUtterance(text);
     const synth = window.speechSynthesis;
     utterance.lang ="en";
-    utterance.voice = synth.getVoices()[0];
+    let voices = synth.getVoices();
+    voices = voices.filter(x => x.name === 'Samantha');
+    utterance.voice = voices[0];
     utterance.rate = 0.9;
-
+    
     utterance.onstart = (event) => {
           initialized(1);
       };
@@ -52,7 +54,7 @@ export default function TTS({text}){
                 let mins = ~~((i % 3600) / 60);
                 let secs = ~~i % 60;
             
-                setClock("0" + mins + " : " + (secs < 10 ? "0" + secs : + secs));
+                setClock("0" + mins + ":" + (secs < 10 ? "0" + secs : + secs));
                 setTimer(i);
 
             },1000);
@@ -62,7 +64,7 @@ export default function TTS({text}){
     
 
     function Play(){
-        
+         
         if(paused){
             synth.resume(utterance);
             isPaused(false);

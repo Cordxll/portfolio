@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import headshot from '../assets/IMG_1783.jpeg'
 import {FaShare} from 'react-icons/fa'
 import { useEffect, useState } from "react";
+import { browserName } from "react-device-detect";
 
 import TTS from "./TTS";
 
@@ -41,7 +42,7 @@ export default function BlogPost(){
             case "title":
                 return(
                     <div>
-                       <h1 className="pt-4 text-4xl font-serif">{body.value}</h1>
+                       <h1 className="pt-4 text-4xl font-bondoni">{body.value}</h1>
                     </div>
                 )
             case "head":
@@ -51,7 +52,7 @@ export default function BlogPost(){
                         
                         <div className="p-2">
                             <h4 className="text-sm font-semibold text-left">Cordell Browne</h4>
-                            <div className="text-xs">{post.date} · {estimatedReadTime()}  · <TTS text={post.text}/></div>
+                            <div className="text-xs">{post.date} · {estimatedReadTime()}  · { browserName !== "Safari" ? <TTS text={post.text}/> : `TTS is Disabled on ${browserName}` }</div>
                         </div>
 
                         <div className='ml-auto mt-2'>
@@ -92,7 +93,7 @@ export default function BlogPost(){
             case "p":
                 return(
                     <div>
-                        <p className="py-4 font-thin">{body.value}</p>
+                        <p className="py-4 font-thin font-bondoni">{body.value}</p>
                     </div>
                 )
             case "code":
