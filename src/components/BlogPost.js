@@ -158,6 +158,10 @@ export default function BlogPost(){
                     return(
                         <div  className="text-gray-700 pl-24">{y.value}</div>
                     )
+                case 'indent4':
+                    return(
+                        <div  className="text-gray-700 pl-28">{y.value}</div>
+                    )
             }
         }
 
