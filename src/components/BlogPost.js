@@ -144,23 +144,23 @@ export default function BlogPost(){
                     )
                 case 'line':
                     return(
-                        <div  className="text-gray-700">{y.value}</div>
+                        <div  className="text-gray-700 whitespace-nowrap">{y.value}</div>
                     )
                 case 'indent1':
                     return(
-                        <div  className="text-gray-700 pl-8">{y.value}</div>
+                        <div  className="text-gray-700 pl-8 whitespace-nowrap">{y.value}</div>
                     )
                 case 'indent2':
                     return(
-                        <div  className="text-gray-700 pl-16">{y.value}</div>
+                        <div  className="text-gray-700 pl-16 whitespace-nowrap">{y.value}</div>
                     )
                 case 'indent3':
                     return(
-                        <div  className="text-gray-700 pl-24">{y.value}</div>
+                        <div  className="text-gray-700 pl-24 whitespace-nowrap">{y.value}</div>
                     )
                 case 'indent4':
                     return(
-                        <div  className="text-gray-700 pl-28">{y.value}</div>
+                        <div  className="text-gray-700 pl-28 whitespace-nowrap">{y.value}</div>
                     )
             }
         }
