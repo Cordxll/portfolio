@@ -98,23 +98,11 @@ export default function BlogPost(){
                 )
             case "code":
                 return(
-                    <div className="rounded-lg bg-gray-100 p-4">
-                        {body.values.map(y => (
-                            <>
-                                {y.type === "comment" ? 
-                                <div>
-                                    <div><code class="text-green-600"># {y.value}</code></div>
-                                </div>
-                                : 
-                                <div>
-                                    <div><code class="text-gray-800">{y.value}</code></div>
-                                </div>
-                                }
-                            </>
-                        ))}
-                    </div>
+                    <>
+                        {renderCode(body.values)}
+                    </>
                 )
-            
+                    
             case "link":
                 return(
                     <div>
@@ -126,6 +114,17 @@ export default function BlogPost(){
                         >{body.value.text}</a>
                     </div>
                 )
+            case "link":
+                    return(
+                        <div>
+                            <a 
+                            href={body.value.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-blue-600 hover:underline text-sm"
+                            >{body.value.text}</a>
+                        </div>
+                    )
             default:
                 return(
                     <div>
@@ -134,6 +133,40 @@ export default function BlogPost(){
                 )
         }
     }
+    
+    function renderCode(x){
+        
+        function logic (y){
+            switch(y.type){
+                case 'comment':
+                    return(
+                        <div class="text-green-600 whitespace-nowrap"># {y.value}</div>
+                    )
+                case 'line':
+                    return(
+                        <div  className="text-gray-700">{y.value}</div>
+                    )
+                case 'indent1':
+                    return(
+                        <div  className="text-gray-700 pl-8">{y.value}</div>
+                    )
+                case 'indent2':
+                    return(
+                        <div  className="text-gray-700 pl-16">{y.value}</div>
+                    )
+                case 'indent3':
+                    return(
+                        <div  className="text-gray-700 pl-24">{y.value}</div>
+                    )
+            }
+        }
+
+        return(
+            <div className="rounded-lg bg-gray-100 p-4 overflow-x-auto font-changa">
+                {x.map(z => logic(z))}
+            </div>
+        )  
+    } 
 
     function estimatedReadTime(){
         const wordCount = post.text.split(' ').length;
@@ -141,11 +174,11 @@ export default function BlogPost(){
 
         return(
             <>
-            {num === 0 ?
-             <> &#60; 1 min read </>
-             : 
-             <> {num} min read </>
-            }
+                {num === 0 ?
+                    <> &#60; 1 min read</>
+                : 
+                    <> {num} min read</>
+                }
             </>
         )
     }

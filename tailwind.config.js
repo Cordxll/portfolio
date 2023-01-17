@@ -35,7 +35,8 @@ module.exports = {
         'carter':['Carter One', 'cursive'],
         'bondoni':['Bodoni Moda', 'serif'],
         'rockSalt' :['Rock Salt', 'cursive'],
-        'nabla' :['Nabla', 'cursive']
+        'nabla' :['Nabla', 'cursive'],
+        'changa' :['Changa', 'sans-serif']
       }
     },
   },
