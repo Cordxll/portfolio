@@ -1,76 +1,128 @@
-import {FaEnvelope, FaKaggle, FaLinkedin, FaGithub} from 'react-icons/fa'
+import {FaKaggle, FaLinkedin, FaGithub, FaExternalLinkAlt} from 'react-icons/fa'
+import {MdOutlineIosShare} from 'react-icons/md'
+import {HiArrowRight} from 'react-icons/hi'
 import headshot from '../assets/IMG_1783.jpeg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 
 export default function Home(){
 
-    
-
-    function Pics(){
-        return(
-            <div className="hidden sm:block">
-                    <div className='flex justify-center relative'>
-                        <div className='absolute top-0 left-0 text-gray-300 font-thin font-cedarville -rotate-45 my-auto'>&#60;img/&#62;</div>
-                        <img className="rounded-full shadow-xl p-4" src={headshot}  alt="Handsome Young Man"/>    
-                    </div>
-                    <div className="relative flex justify-center gap-10 py-4">
-                        <span className='absolute left-0 top-0  text-gray-300 font-thin font-cedarville rotate-12'>&#60;a&#62;</span>
-                        <span className='absolute bottom-0 right-0  text-gray-300 font-thin font-cedarville -rotate-12'>&#60;/a&#62;</span>
-                        <Link to="/contact" className="hover:text-red-400"><FaEnvelope size={24}/></Link>
-                        <a href="https://www.linkedin.com/in/cordell-browne-b51429184/" target="_blank" rel="noreferrer"className="hover:text-orange-400"><FaLinkedin size={22}/></a>
-                        <a href="https://github.com/Cordxll" target="_blank" rel="noreferrer" className="hover:text-red-200"> <FaGithub size={22}/></a>
-                        <a href='https://www.kaggle.com/cordellbrowne'target="_blank" rel="noreferrer"  className="hover:text-orange-300"><FaKaggle size={20}/></a>
-                    </div>
-                </div> 
-            
-        )
-    }
+    const [hovering, isHovering] = useState("");
     
     function Bouncy(word){
         return(
-            <div className='p-0 sm:p-3 sm:pl-8'>
+            <div className=''>
                 {word.split('').map((x) => (
-                    <span className='animate-text bg-gradient-to-r from-yellow-100 via-orange-500 to-red-600 bg-clip-text text-transparent text-4xl sm:text-5xl transition-opacity hover:opacity-0 ease-out duration-300 font-alfa'>{x}</span>
+                    <span className='animate-text bg-gradient-to-r from-violet-400 via-blue-200 to-sky-500 bg-clip-text text-transparent transition-opacity hover:opacity-0 ease-out duration-300 font-serif'>{x}</span>
                 ))}
             </div>
         )
     }
 
-    
-    function AboutMe(){
+    function left(){
         return(
-        <>
-        <div>  
-            <div className="font-mono p-8 ">
-                <div className='text-gray-300 font-thin font-cedarville'>&#60;h1&#62;</div>
-                {Bouncy("Hello 👋")}
-                {Bouncy("I'm Cordell,")}
-                {Bouncy("A Software Engineer.")}
-                <div className='text-sm text-gray-300 font-thin font-cedarville'>&#60;/h1&#62;</div>
-                <div className='relative m-0 sm:ml-4 p-2 sm:p-4 w-fit'>
-                    <span className='absolute right-0 top-0 text-sm text-gray-300 font-thin font-cedarville -rotate-12'>&#60;/p&#62;</span>
-                    <span className='text-gray-300 font-light text-xs sm:text-lg p-1 font-rockSalt '>Full Stack Developer/ Biomed Grad</span>
-                    <span className='absolute  left-0 bottom-2 text-xs text-gray-300 font-thin font-cedarville rotate-12'>&#60;p&#62;</span>
-                </div>   
+            <div className='order-1'>
+                <div className=''>
+                    <div className='text-2xl sm:text-5xl font-semibold py-1'>{Bouncy("Cordell Browne")}</div>
+                    <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Software Engineer</div>
+                </div>
+                <p className='text-slate-600 font-normal sm:font-thin text-md sm:text-xl py-2 max-w-lg'>
+                    I am a creative developer with interst in many technologies. I have experience with java for backend development, react and tailwind python for data analytics and science,
+                </p>
+                <div className='flex py-8 gap-6 text-xl'>
+                    <Link className='flex p-1 px-4 bg-black text-white rounded-full shadow hover:outline outline-offset-2 outline-black' to="/projects">Projects<HiArrowRight className='mt-1 ml-1'/></Link>
+                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://www.linkedin.com/in/cordell-browne-b51429184/" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
+                </div>
             </div>
-        </div>
-        </>
         )
     }
+
+    function right(){
+        return(
+            <div className='mx-auto order-2'>
+                <img 
+                src='https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/man-technologist-dark-skin-tone_1f468-1f3ff-200d-1f4bb.png'
+                className='w-3/5 sm:w-full'
+                alt='Handsome Young Man'
+                />
+            </div>
+        )
+    }
+
+    function scroll(){
+        return(
+            <div className='w-fit absolute mx-auto bottom-0 inset-x-0 sm:block hidden'>
+                <div className='animate-bounce text-gray-300 font-changa'>scroll</div>
+                <div className='h-40 w-0.5 mx-auto bg-gray-300 rounded-full'></div>
+            </div>
+        )
+    }
+
+    function chooseIcon(name){
+        switch(name){
+            case "Github" :
+                return(<FaGithub/>)
+            case "Linkedin":
+                return(<FaLinkedin/>)
+            case "Kaggle":
+                return(<FaKaggle/>)
+            default:
+                return(<>???</>)
+        }
+    }
+
+    function myLinks(){
+        return(
+            <div className='w-5/6 sm:w-3/5 my-auto'>
+                <div className='flex justify-center w-full text-center content-center'>
+                    <div className='m-4 text-xl font-semibold'>
+                    <img className="rounded-full shadow-xl p-2 w-40 m-4" src={headshot}  alt="Handsome Young Man"/>
+                    My Links
+                    </div>
+                </div>
+                {[
+                    {name:"Github",link:"https://github.com/Cordxll"},
+                    {name:"Linkedin",link:"https://www.linkedin.com/in/cordell-browne-b51429184/"},
+                    {name:"Kaggle",link:"https://www.kaggle.com/cordellbrowne"}
+                ].map(x => (
+                    <a className='w-full py-4 border-4 border-white rounded-full flex justify-center my-4 bg-gradient-to-r from-violet-400 via-sky-300 to-blue-200 text-lg text-white font-bold shadow hover:scale-110 transition duration-150 ease-in-out relative' 
+                    onMouseEnter={() => {isHovering(x.name)}} 
+                    onMouseLeave={() => {isHovering("")}}
+                    href={x.link} target="_blank" rel="noreferrer"
+                    >
+                        {x.name}
+                        {hovering === x.name ? <div className='absolute right-10 bottom-5'><MdOutlineIosShare size={24}/></div> : ""}
+                        <div className='absolute bottom-5 left-10'>{chooseIcon(x.name)}</div>
+                    </a>
+                ))}
+
+            </div>
+        )
+    }
+
+    function test(){
+        return(
+            <div className='w-screen bg-no-repeat bg-cover bg-fixed transition-opacity duration-1000 ease-in animate-fade' style={{backgroundImage: `url(https://tailwindcss.com/_next/static/media/docs@tinypng.d9e4dcdc.png)`}}>
+                <div className="h-screen flex justify-center items-center">
+                    <div className='block sm:flex w-5/6 sm:w-3/5 justify-between gap-4'>
+                        {right()}
+                        {left()}
+                        <div className='mx-auto'>{scroll()}</div>
+                    </div>
+                </div>
+                <div className='h-screen flex justify-center w-full '>
+                    {myLinks()}    
+                </div>
+            </div>
+        )
+    }
+
+
      
     return(
-        <div className='relative'>
-            <div className='absolute top-0 left-4 text-sm text-gray-300 font-cedarville font-alex-brush'>&#60;html/&#62;</div>
-            <div className='h-4 sm:h-16'/>
-            <div className='p-2 flex justify-center transition-opacity duration-1000 ease-in animate-fade'>
-                <div className='relative'>
-                    <div>{AboutMe()}</div>
-                    <div className='absolute top-0 left-0 text-gray-300 font-thin font-cedarville '>&#60;body&#62;</div>
-                    <div className='absolute bottom-0 left-0 text-sm text-gray-300 font-cedarville'>&#60;/body&#62;</div>
-                </div>
-                {Pics()}
-            </div>
-        </div>
+        <>
+            {test()}
+        </>
     )
 }

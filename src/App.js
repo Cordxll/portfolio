@@ -8,13 +8,15 @@ import BlogPost from "./components/BlogPost";
 import Contact from "./components/Contact";
 import ProjectsPage from "./components/ProjectsPage";
 import TestFile from "./components/TestFile";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div>
           <Router>
             <NavBar/>
-            <div className="h-20"></div>
+            <div className="h-16"></div>
+            <ScrollToTop/>
             <Routes>
               <Route exact path="/" element={<Home/>}/>
               <Route path="/projects" element={<Projects/>}/>

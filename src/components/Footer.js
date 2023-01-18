@@ -10,9 +10,7 @@ export default function Footer(){
                     <span className="text-sm text-gray-400 hidden sm:block sm:text-center font-thin font-cedarville">
                         I made this w/ React
                     </span>
-                    <Link to="/Contact" className="ml-auto text-sm text-gray-500 hover:underline">
-                        Contact Me
-                    </Link>
+                
                 </div>
             </footer>
         </>

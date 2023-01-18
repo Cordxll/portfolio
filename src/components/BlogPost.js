@@ -114,17 +114,6 @@ export default function BlogPost(){
                         >{body.value.text}</a>
                     </div>
                 )
-            case "link":
-                    return(
-                        <div>
-                            <a 
-                            href={body.value.link}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-blue-600 hover:underline text-sm"
-                            >{body.value.text}</a>
-                        </div>
-                    )
             default:
                 return(
                     <div>
@@ -162,6 +151,12 @@ export default function BlogPost(){
                     return(
                         <div  className="text-gray-700 pl-28 whitespace-nowrap">{y.value}</div>
                     )
+                default : 
+                        return(
+                            <div>
+                                Default
+                            </div>
+                        )
             }
         }
 
@@ -189,7 +184,7 @@ export default function BlogPost(){
 
 
     return(
-        <div className="flex  justify-center">
+        <div className="flex  justify-center pt-4">
             <div className="w-full sm:w-3/5">
                 {post.body.map(x => (
                     <div>

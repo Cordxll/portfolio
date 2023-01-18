@@ -99,7 +99,7 @@ export default function ProjectsPage(){
 
     return(
         <>
-            <div className="sm:px-32 md:px-40 lg:px-52">
+            <div className="sm:px-32 md:px-40 lg:px-52 pt-8">
                 {GoBack()}
                     {(project.body)?.map((x) => (
                         <>

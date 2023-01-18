@@ -10,9 +10,9 @@ import {
 
 export default function Blog(){
     const cancelButtonRef = useRef(null);
-    const [loading, setLoading] = useState(true)
+    const [loading, isLoading] = useState(true)
     const [posts, setPosts] = useState([]);
-    const [open, setOpen] = useState(false);
+    const [open, isOpen] = useState(false);
     const [title, setTitle] = useState("");
     const [image, setImg] = useState("https://helios-i.mashable.com/imagery/articles/05vBXJ1bDUunSpOX6pCSxgm/hero-image.fill.size_1248x702.v1638327907.jpg");
     const [postLink, setPostLink] = useState("blank");
@@ -34,7 +34,7 @@ export default function Blog(){
                 setPosts(x.Items.slice(1,x.length));
                 setFeat(x.Items[0])
             })
-            .then(() => setLoading(false))
+            .then(() => isLoading(false))
         }
         
         showAll();
@@ -42,7 +42,7 @@ export default function Blog(){
     },[])
 
     function handleUpdate(post){
-        (setOpen(true));
+        (isOpen(true));
         (setTitle(post.title));
         setPostLink("cordell.in"+post.post_id)
         setImg(post.preview_img);
@@ -154,7 +154,7 @@ export default function Blog(){
     function BlogModal() {
         return (
           <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+            <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={isOpen}>
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -185,7 +185,7 @@ export default function Blog(){
                           <div className="mt-3 text-center sm:mt-0 sm:ml-4">
                             <Dialog.Title as="h3" className="flex space-x-64 sm:space-x-36 text-lg font-medium leading-6 text-gray-900 pb-3">
                               <p className="text-left pt-2">Share This Post</p>
-                              <button onClick={() => setOpen(false)} className="p-2 hover:bg-gray-300 rounded-full"><FaTimes/></button>
+                              <button onClick={() => isOpen(false)} className="p-2 hover:bg-gray-300 rounded-full"><FaTimes/></button>
                             </Dialog.Title>
 
                             <div className="mt-2 border border-gray-300 rounded-lg px-4 py-4 text-left flex  whitespace-nowrap ">
@@ -232,7 +232,7 @@ export default function Blog(){
                         <button
                           type="button"
                           className="inline-flex w-full justify-center rounded-full border border-gray-300 bg-white p-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-                          onClick={() => {setOpen(false);navigator.clipboard.writeText(postLink)}}
+                          onClick={() => {isOpen(false);navigator.clipboard.writeText(postLink)}}
                           ref={cancelButtonRef}
                         >
                         <FaLink/>
@@ -255,10 +255,10 @@ export default function Blog(){
       }
 
     return(
-      <>
+      <div className="pt-2">
         {loading ?  FeaturedSkeleton() : Featured()}
         {Line()}
         {loading ? ShowPostSkeleton() : ShowPost()}
-      </>
+      </div>
     )
 }
