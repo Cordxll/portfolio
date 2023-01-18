@@ -22,17 +22,17 @@ export default function Home(){
 
     function left(){
         return(
-            <div className='order-1'>
+            <div className='order-1 text-center sm:text-left'>
                 <div className=''>
                     <div className='text-2xl sm:text-5xl font-semibold py-1'>{Bouncy("Cordell Browne")}</div>
-                    <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Software Engineer</div>
+                    <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Full Stack Developer</div>
                 </div>
                 <p className='text-slate-600 font-normal sm:font-thin text-md sm:text-xl py-2 max-w-lg'>
-                    I am a creative developer with interst in many technologies. I have experience with java for backend development, react and tailwind python for data analytics and science,
+                    I am a creative developer with interst in many aspects of software engineering. 
                 </p>
                 <div className='flex py-8 gap-6 text-xl'>
                     <Link className='flex p-1 px-4 bg-black text-white rounded-full shadow hover:outline outline-offset-2 outline-black' to="/projects">Projects<HiArrowRight className='mt-1 ml-1'/></Link>
-                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://www.linkedin.com/in/cordell-browne-b51429184/" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
+                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://google.com" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
                 </div>
             </div>
         )
@@ -40,10 +40,10 @@ export default function Home(){
 
     function right(){
         return(
-            <div className='mx-auto order-2'>
+            <div className='mx-auto order-2 w-full sm:w-auto'>
                 <img 
                 src='https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/man-technologist-dark-skin-tone_1f468-1f3ff-200d-1f4bb.png'
-                className='w-3/5 sm:w-full'
+                className='w-3/5 sm:w-full mx-auto'
                 alt='Handsome Young Man'
                 />
             </div>

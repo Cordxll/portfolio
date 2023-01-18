@@ -4,7 +4,7 @@ export default function NavBar(){
     return(
         <div className="bg-white px-2 py-2.5 fixed w-full z-20 top-0 left-0 border-b border-gray-200 bg-opacity-90 shadow">
             <div className="flex flex-wrap justify-between mx-auto">
-                <Link to="/" className="flex items-center">
+                <Link to="/" className="flex items-center px-4">
                     <span className="hidden sm:flex self-center text-3xl font-semibold whitespace-nowrap order-1 font-nabla">Cordell</span>
                 </Link>
                 <div className="justify-between items-center w-auto flex" id="navbar-sticky">
