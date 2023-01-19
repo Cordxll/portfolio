@@ -28,11 +28,11 @@ export default function Home(){
                     <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Full Stack Developer</div>
                 </div>
                 <p className='text-slate-600 font-normal sm:font-thin text-md sm:text-xl py-2 max-w-lg'>
-                    I am a creative developer with interst in many aspects of software engineering. 
+                    I am a creative developer with interest in many aspects of software engineering. 
                 </p>
                 <div className='flex py-8 gap-6 text-xl'>
                     <Link className='flex p-1 px-4 bg-black text-white rounded-full shadow hover:outline outline-offset-2 outline-black' to="/projects">Projects<HiArrowRight className='mt-1 ml-1'/></Link>
-                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://google.com" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
+                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://docs.google.com/document/d/e/2PACX-1vTMuGMryFF2kDofdF5HclP26gF9PQuk1OpEJ4-S7tDfvn7muP9q6msRlH9qdAm6Wg/pub" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
                 </div>
             </div>
         )
