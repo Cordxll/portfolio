@@ -2,6 +2,7 @@ import {FaKaggle, FaLinkedin, FaGithub, FaExternalLinkAlt} from 'react-icons/fa'
 import {MdOutlineIosShare} from 'react-icons/md'
 import {HiArrowRight} from 'react-icons/hi'
 import headshot from '../assets/IMG_1783.jpeg'
+import myGif from '../assets/man-technologist-dark-skin-tone_1f468-1f3ff-200d-1f4bb.png'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -42,7 +43,7 @@ export default function Home(){
         return(
             <div className='mx-auto order-2 w-full sm:w-auto'>
                 <img 
-                src='https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/man-technologist-dark-skin-tone_1f468-1f3ff-200d-1f4bb.png'
+                src={myGif}
                 className='w-3/5 sm:w-full mx-auto'
                 alt='Handsome Young Man'
                 />
