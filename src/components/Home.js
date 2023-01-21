@@ -31,8 +31,8 @@ export default function Home(){
                     I am a creative developer with interest in many aspects of software engineering. 
                 </p>
                 <div className='flex py-8 gap-6 text-xl'>
-                    <Link className='flex p-1 px-4 bg-black text-white rounded-full shadow hover:outline outline-offset-2 outline-black' to="/projects">Projects<HiArrowRight className='mt-1 ml-1'/></Link>
-                    <a className='flex p-1 px-4 border rounded-full shadow hover:outline outline-offset-2' href="https://docs.google.com/document/d/e/2PACX-1vTMuGMryFF2kDofdF5HclP26gF9PQuk1OpEJ4-S7tDfvn7muP9q6msRlH9qdAm6Wg/pub" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
+                    <Link className='flex p-1 px-4 bg-black text-white rounded-full shadow hover:ring ring-offset-2 ring-black' to="/projects">Projects<HiArrowRight className='mt-1 ml-1'/></Link>
+                    <a className='flex p-1 px-4 border rounded-full shadow hover:ring ring-offset-2' href="https://docs.google.com/document/d/e/2PACX-1vTMuGMryFF2kDofdF5HclP26gF9PQuk1OpEJ4-S7tDfvn7muP9q6msRlH9qdAm6Wg/pub" target="_blank" rel="noreferrer">Resume<FaExternalLinkAlt className='mt-1 ml-2 text-lg'/></a>
                 </div>
             </div>
         )
