@@ -119,19 +119,19 @@ export default function Projects(){
                             <div className="h-3 w-3 rounded-full"/>
                         </div>
                         <div className="mt-8">
-                            <div className="w-5/6 h-2 bg-gray-500 font-semibold my-2 animate-pulse"/>
+                            <div className="w-5/6 h-2 bg-gray-500 font-semibold my-2 rounded-full animate-pulse"/>
                             <div className="flex space-x-2 text-gray-400 text-sm">
                                 <GrStackOverflow className=""/> 
-                                <div className="w-4/6 bg-gray-500 h-2 animate-pulse"/>
+                                <div className="w-4/6 bg-gray-500 h-2 rounded-full animate-pulse"/>
                             </div>
                             <div className="flex space-x-2 text-gray-400 text-sm my-3">
                                 <FaRegFile className=""/>
-                                <div className="w-4/6 bg-gray-500 h-2 animate-pulse"/> 
+                                <div className="w-4/6 bg-gray-500 h-2 rounded-full animate-pulse"/> 
                             </div>
                             <div className="border-t-2 "/>
                             <div className="flex justify-between sm:block md:block lg:flex">
                                 <div className="my-2">
-                                    <div className="bg-gray-500 h-2 animate-pulse w-60 my-1"/> 
+                                    <div className="bg-gray-500 h-2 rounded-full animate-pulse w-60 my-1"/> 
                                     <div className="flex space-x-2">
                                         <div className="w-6 h-6 rounded-full bg-gray-500 animate-pulse"/>
                                     </div>
