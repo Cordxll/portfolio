@@ -26,7 +26,7 @@ export default function Home(){
             <div className='order-1 text-center sm:text-left'>
                 <div className=''>
                     <div className='text-2xl sm:text-5xl font-semibold py-1'>{Bouncy("Cordell Browne")}</div>
-                    <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Full Stack Developer</div>
+                    <div className='text-gray-600 text-lg sm:text-4xl font-light py-1'>Software Engineer</div>
                 </div>
                 <p className='text-slate-600 font-normal sm:font-thin text-md sm:text-xl py-2 max-w-lg'>
                     I am a creative developer with interest in many aspects of software engineering. 
